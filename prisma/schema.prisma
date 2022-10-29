@@ -9,3 +9,17 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// Home Model
+model Home {
+  id            String        @default(cuid())    @id
+  image         String?
+  title         String
+  description   String
+  price         Float
+  guests        Int
+  beds          Int
+  baths         Int
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
