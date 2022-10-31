@@ -2,7 +2,13 @@ import Layout from '../components/layout';
 import ListingForm from '../components/listing-form';
 
 const Create = () => {
-  const addHome = () => null;
+  const addHome = (data) => fetch('/api/homes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+  });
 
   return (
     <Layout>
